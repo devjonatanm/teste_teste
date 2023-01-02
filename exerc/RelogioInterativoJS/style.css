@@ -1,0 +1,15 @@
+body {
+    background: linear-gradient(to right, #1e9600, #fff200, #ff0000);
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 60px;
+    color: #ffffff;
+    letter-spacing: 7px;
+    font-family: monospace;
+    text-shadow: -1px -1px white, 1px 1px #333
+}

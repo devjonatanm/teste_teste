@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+#tabuleiro {
+    border: 3px solid #000;
+    width: 566px;
+    height: 563px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+.linha {
+    clear: both;
+}
+
+.linha div {
+    font-size: 3em;
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-left: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+    text-align: center;
+}
+
+.linha div:first-child {
+    border-left: 0;
+}
+
+.quad-1 div:nth-child(2n+1) {
+    background: #000;
+    color: #FFF
+}
+
+.quad-2 div:nth-child(2n) {
+    background: #000;
+    color: #FFF
+}

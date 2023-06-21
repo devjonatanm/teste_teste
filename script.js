@@ -1,6 +1,6 @@
 async function repositorioNoGithub() {
     try {
-        const response = await fetch('https://api.github.com/users/devjonatanmarquess/repos');
+        const response = await fetch('https://api.github.com/users/devjonatanm/repos');
         const body = await response.json();
         return body;
     } catch (err) {

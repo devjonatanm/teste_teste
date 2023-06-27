@@ -1,18 +1,45 @@
-async function repositorioNoGithub() {
-    try {
-        const response = await fetch('https://api.github.com/users/devjonatanm/repos');
-        const body = await response.json();
-        return body;
-    } catch (err) {
-        console.log(err);
-    } finally {
-        //console.log('deu');
-    }
-}
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonatan Marques - Projects Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 repositorioNoGithub().then((apigit) => {
     let juntando = ``
     console.log(apigit.length)
+
+<body>
+    <div class="site">
+        <div class="part1">
+            <div class="part1-1-nome-perfil bordas">
+                <a target="_blank" href="https://github.com/devjonatanmarquess"><img
+                        src="https://avatars.githubusercontent.com/u/102691032?v=4"></a>
+                <div>
+                    <a target="_blank" href="https://github.com/devjonatanmarquess">
+                        <h2>Jonatan Marques</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="part1-2-tech-stacks bordas">
+                <div>
+                    <h4>Tech Stacks</h4>
+                </div>
+                <div>JS, DOM, React.js, Next.js, Remix, Typescript, Tailwind CSS...</div>
+            </div>
+            <div class="part1-3-links bordas">
+                <div>
+                    <div>GitHub</div>
+                    <div><a target="_blank" href="https://github.com/devjonatanm">@devjonatanm</a></div>
+                </div>
+
+                <div>
+                    <div>Instagram</div>
+                    <div><a target="_blank" href="https://www.instagram.com/devjonatanm/">@devjonatanm</a></div>
+                </div>
 
     for (let i = 0; i < apigit.length; i++) {
         if (apigit[i].homepage === "" || apigit[i].homepage === null) {
@@ -22,9 +49,71 @@ repositorioNoGithub().then((apigit) => {
                     <a target="_blank" href="${apigit[i].homepage}"> [Acessar Website]</a></p>`;
         }
 
+            </div>
+        </div>
+        <div class="part2">
+            <div class="part2-1-mini-proj bordas">
+                <div>
+                    <h3>Mini-projects</h3>
+                </div>
+                <div>
+                    <div><a href="exerc/OurMenuJS"><img
+                                src="/exerc/OurMenuJS/image.jpg">OurMenuJS</a></div>
+                    <div><a href="exerc/TabXadrezCSS"><img
+                                src="/exerc/TabXadrezCSS/image.jpg">TabXadrezCSS</a></div>
+                    <div><a href="exerc/BateriaTecladoJS"><img
+                                src="/exerc/BateriaTecladoJS/image.jpg">BateriaTecladoJS</a></div>
+                    <div><a href="exerc/CrudClientJS"><img src="/exerc/CrudClientJS/image.jpg">CrudClientJS</a></div>
+                    <div><a href="exerc/FiltroEmItensJS"><img src="/exerc/FiltroEmItensJS/image.jpg">FiltroEmItensJS</a>
+                    </div>
+                    <div><a href="exerc/FlappyBirdJS"><img src="/exerc/FlappyBirdJS/image.jpg">FlappyBirdJS</a></div>
+                    <div><a href="exerc/FormularioJS"><img src="/exerc/FormularioJS/image.jpg">FormularioJS</a></div>
+                    <div><a href="exerc/GeleriaJS"><img src="/exerc/GeleriaJS/image.jpg">GeleriaJS</a></div>
+                    <div><a href="exerc/GeraLoremIpsumJS"><img
+                                src="/exerc/GeraLoremIpsumJS/image.jpg">GeraLoremIpsumJS</a></div>
+                    <div><a href="exerc/PesquisaWikiJS"><img src="/exerc/PesquisaWikiJS/image.jpg">PesquisaWikiJS</a>
+                    </div>
+                    <div><a href="exerc/RelogioInterativoJS"><img
+                                src="/exerc/RelogioInterativoJS/image.jpg">RelogioInterativoJS</a>
+                    </div>
+                    <div><a href="exerc/ResponsividadeCSS"><img
+                                src="/exerc/ResponsividadeCSS/image.jpg">ResponsividadeCSS</a></div>
+                    <div><a href="exerc/SliderJS"><img src="/exerc/SliderJS/image.jpg">SliderJS</a></div>
+                    <div><a href="exerc/ToDoListJS"><img src="/exerc/ToDoListJS/image.jpg">ToDoListJS</a></div>
+                    <div><a href="exerc/UrnaJS"><img src="/exerc/UrnaJS/image.jpg">UrnaJS</a></div>
+                    <div><a href="exerc/JogoDaVelhaReactJS"><img
+                                src="/exerc/JogoDaVelhaReactJS/image.jpg">JogoDaVelhaReactJS</a></div>
+                </div>
+            </div>
+            <div class="part2-2-reposits bordas">
+                <div>
+                    <a target="_blank" href="https://github.com/devjonatanmarquess?tab=repositories">
+                        <h3>Repositories</h3>
+                    </a>
+                </div>
+                <div id="repo-js"></div>
+            </div>
+            <div class="part2-3-ferram-dev bordas">
+                <div>
+                    <h3>Developer tools</h3>
+                </div>
+                <div class="proj-itens">
+                    <!-- <a class="blink" target="_blank"
+                        href="https://github.com/devjonatanmarquess/devjonatanmarquess.github.io/blob/master/README.md">Lista
+                        Completa</a> -->
+                    <a target="_blank" href="https://www.4devs.com.br/">Gerador de dados</a>
+                    <a target="_blank" href="https://getemoji.com/">Emojis</a>
+                    <a target="_blank" href="https://www.site24x7.com/pt/tools/json-gerador.html">Gerador de JSON</a>
+                    <a target="_blank" href="https://www.site24x7.com/tools.html#developer">Tools Developer</a>
+                    <a target="_blank"
+                        href="https://www.site24x7.com/pt/tools/seletor-de-codigo-cor.html">Identificador</a>
+                    <a target="_blank" href="https://www.convertte.com.br/gerador-link-whatsapp/">Links Zap</a>
+                </div>
+            </div>
+        </div>
+    </div>
     }
 
-    let el = document.querySelector("#repo-js");
-    el.innerHTML = juntando;
-
-});
+    <script src="script.js"></script>
+</body>
+</html>

@@ -11,12 +11,10 @@ async function repositorioNoGithub() {
 }
 
 repositorioNoGithub().then((apigit) => {
-
     let juntando = ``
     console.log(apigit.length)
 
     for (let i = 0; i < apigit.length; i++) {
-
         if (apigit[i].homepage === "" || apigit[i].homepage === null) {
             juntando += `<p>${i + 1} - <a target="_blank" href="https://github.com/${apigit[i].full_name}">${apigit[i].name}</a></p>`;
         } else {

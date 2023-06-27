@@ -207,18 +207,23 @@ const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da décad
 - Não modifique a string da const "name";
 - Exiba a "newName" no console;
 */
-const name = 'walter white'
+//const name = 'walter white'
 
-let espalhar = name.split('')
-for(let i = 0; i < espalhar.length; i++){
-    if(espalhar[0])
-    console.log(i)
+const nome = 'jonatan marques programador front-end'
+let separadas = nome.split(' ')
+let juntar = []
+for (let j = 0; j < separadas.length; j++) {
+
+    let mudarPrim = separadas[j].split('')
+    for (let i = 0; i < mudarPrim.length; i++) {
+        if (mudarPrim[i] === mudarPrim[0]) {
+            mudarPrim[i] = mudarPrim[i].toUpperCase()
+        }
+    }
+    juntar.push(mudarPrim)
 }
-console.log(espalhar.length)
-
-
-let newName = 0
-console.log(name.split(' ')[0][0]+name.split(' ')[1][0])
+let newName = juntar.join(" ").replaceAll(',', '')
+//console.log(newName)
 
 /*
 22 - Comente o console.log acima, e,
@@ -229,3 +234,5 @@ console.log(name.split(' ')[0][0]+name.split(' ')[1][0])
 - Não modifique a string da const "name";
 - Exiba a "newName" no console;
 */
+newName = `${juntar.join(" ").replaceAll(',', '')}`
+console.log(newName)

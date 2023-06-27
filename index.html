@@ -8,9 +8,6 @@
     <title>Jonatan Marques - Projects Javascript</title>
     <link rel="stylesheet" href="style.css">
 </head>
-repositorioNoGithub().then((apigit) => {
-    let juntando = ``
-    console.log(apigit.length)
 
 <body>
     <div class="site">
@@ -35,20 +32,14 @@ repositorioNoGithub().then((apigit) => {
                     <div>GitHub</div>
                     <div><a target="_blank" href="https://github.com/devjonatanm">@devjonatanm</a></div>
                 </div>
-
                 <div>
                     <div>Instagram</div>
                     <div><a target="_blank" href="https://www.instagram.com/devjonatanm/">@devjonatanm</a></div>
                 </div>
-
-    for (let i = 0; i < apigit.length; i++) {
-        if (apigit[i].homepage === "" || apigit[i].homepage === null) {
-            juntando += `<p>${i + 1} - <a target="_blank" href="https://github.com/${apigit[i].full_name}">${apigit[i].name}</a></p>`;
-        } else {
-            juntando += `<p>${i + 1} - <a target="_blank" href="https://github.com/${apigit[i].full_name}">${apigit[i].name}</a> - 
-                    <a target="_blank" href="${apigit[i].homepage}"> [Acessar Website]</a></p>`;
-        }
-
+                <div>
+                    <div>LinkedIn</div>
+                    <div><a target="_blank" href="https://www.linkedin.com/in/devjonatanm/">@devjonatanm</a></div>
+                </div>
             </div>
         </div>
         <div class="part2">
@@ -57,32 +48,35 @@ repositorioNoGithub().then((apigit) => {
                     <h3>Mini-projects</h3>
                 </div>
                 <div>
-                    <div><a href="exerc/OurMenuJS"><img
-                                src="/exerc/OurMenuJS/image.jpg">OurMenuJS</a></div>
-                    <div><a href="exerc/TabXadrezCSS"><img
-                                src="/exerc/TabXadrezCSS/image.jpg">TabXadrezCSS</a></div>
-                    <div><a href="exerc/BateriaTecladoJS"><img
-                                src="/exerc/BateriaTecladoJS/image.jpg">BateriaTecladoJS</a></div>
-                    <div><a href="exerc/CrudClientJS"><img src="/exerc/CrudClientJS/image.jpg">CrudClientJS</a></div>
-                    <div><a href="exerc/FiltroEmItensJS"><img src="/exerc/FiltroEmItensJS/image.jpg">FiltroEmItensJS</a>
+                    <div><a href="exerc/OurMenuJS/index.html"><img src="exerc/OurMenuJS/image.jpg">OurMenuJS</a></div>
+                    <div><a href="exerc/TabXadrezCSS/index.html"><img
+                                src="exerc/TabXadrezCSS/image.jpg">TabXadrezCSS</a></div>
+                    <div><a href="exerc/BateriaTecladoJS/index.html"><img
+                                src="exerc/BateriaTecladoJS/image.jpg">BateriaTecladoJS</a></div>
+                    <div><a href="exerc/CrudClientJS/index.html"><img
+                                src="exerc/CrudClientJS/image.jpg">CrudClientJS</a></div>
+                    <div><a href="exerc/FiltroEmItensJS/index.html"><img
+                                src="exerc/FiltroEmItensJS/image.jpg">FiltroEmItensJS</a>
                     </div>
-                    <div><a href="exerc/FlappyBirdJS"><img src="/exerc/FlappyBirdJS/image.jpg">FlappyBirdJS</a></div>
-                    <div><a href="exerc/FormularioJS"><img src="/exerc/FormularioJS/image.jpg">FormularioJS</a></div>
-                    <div><a href="exerc/GeleriaJS"><img src="/exerc/GeleriaJS/image.jpg">GeleriaJS</a></div>
-                    <div><a href="exerc/GeraLoremIpsumJS"><img
-                                src="/exerc/GeraLoremIpsumJS/image.jpg">GeraLoremIpsumJS</a></div>
-                    <div><a href="exerc/PesquisaWikiJS"><img src="/exerc/PesquisaWikiJS/image.jpg">PesquisaWikiJS</a>
+                    <div><a href="exerc/FlappyBirdJS/index.html"><img
+                                src="exerc/FlappyBirdJS/image.jpg">FlappyBirdJS</a></div>
+                    <div><a href="exerc/FormularioJS/index.html"><img
+                                src="exerc/FormularioJS/image.jpg">FormularioJS</a></div>
+                    <div><a href="exerc/GeleriaJS/index.html"><img src="exerc/GeleriaJS/image.jpg">GeleriaJS</a></div>
+                    <div><a href="exerc/GeraLoremIpsumJS/index.html"><img
+                                src="exerc/GeraLoremIpsumJS/image.jpg">GeraLoremIpsumJS</a></div>
+                    <div><a href="exerc/PesquisaWikiJS/index.html"><img
+                                src="exerc/PesquisaWikiJS/image.jpg">PesquisaWikiJS</a>
                     </div>
-                    <div><a href="exerc/RelogioInterativoJS"><img
-                                src="/exerc/RelogioInterativoJS/image.jpg">RelogioInterativoJS</a>
+                    <div><a href="exerc/RelogioInterativoJS/index.html"><img
+                                src="exerc/RelogioInterativoJS/image.jpg">RelogioInterativoJS</a>
                     </div>
-                    <div><a href="exerc/ResponsividadeCSS"><img
-                                src="/exerc/ResponsividadeCSS/image.jpg">ResponsividadeCSS</a></div>
-                    <div><a href="exerc/SliderJS"><img src="/exerc/SliderJS/image.jpg">SliderJS</a></div>
-                    <div><a href="exerc/ToDoListJS"><img src="/exerc/ToDoListJS/image.jpg">ToDoListJS</a></div>
-                    <div><a href="exerc/UrnaJS"><img src="/exerc/UrnaJS/image.jpg">UrnaJS</a></div>
-                    <div><a href="exerc/JogoDaVelhaReactJS"><img
-                                src="/exerc/JogoDaVelhaReactJS/image.jpg">JogoDaVelhaReactJS</a></div>
+                    <div><a href="exerc/ResponsividadeCSS/index.html"><img
+                                src="exerc/ResponsividadeCSS/image.jpg">ResponsividadeCSS</a></div>
+                    <div><a href="exerc/SliderJS/index.html"><img src="exerc/SliderJS/image.jpg">SliderJS</a></div>
+                    <div><a href="exerc/ToDoListJS/index.html"><img src="exerc/ToDoListJS/image.jpg">ToDoListJS</a>
+                    </div>
+                    <div><a href="exerc/UrnaJS/index.html"><img src="exerc/UrnaJS/image.jpg">UrnaJS</a></div>
                 </div>
             </div>
             <div class="part2-2-reposits bordas">
@@ -98,9 +92,6 @@ repositorioNoGithub().then((apigit) => {
                     <h3>Developer tools</h3>
                 </div>
                 <div class="proj-itens">
-                    <!-- <a class="blink" target="_blank"
-                        href="https://github.com/devjonatanmarquess/devjonatanmarquess.github.io/blob/master/README.md">Lista
-                        Completa</a> -->
                     <a target="_blank" href="https://www.4devs.com.br/">Gerador de dados</a>
                     <a target="_blank" href="https://getemoji.com/">Emojis</a>
                     <a target="_blank" href="https://www.site24x7.com/pt/tools/json-gerador.html">Gerador de JSON</a>
@@ -116,4 +107,5 @@ repositorioNoGithub().then((apigit) => {
 
     <script src="script.js"></script>
 </body>
+
 </html>

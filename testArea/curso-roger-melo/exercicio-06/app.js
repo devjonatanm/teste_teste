@@ -24,6 +24,14 @@
 */
 
 const fruits = ['morango', 'banana', 'mamão']
+if (fruits.includes(`abacaxi`)) {
+  console.log("A string \"abacaxi\" existe no array fruits.")
+} else if (fruits.includes(`pera`)) {
+  console.log("A string \"pera\" existe no array fruits.")
+} else {
+  console.log(`"Nem pera nem abacaxi existem no array "fruits".".`)
+}
+
 
 /*
   02
@@ -38,6 +46,15 @@ const fruits = ['morango', 'banana', 'mamão']
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
 
+let now = new Date()
+if (now.getHours() >= 6 && now.getHours() < 12) {
+  console.log("Bom dia!")
+} else if (now.getHours() >= 12 && now.getHours() < 18) {
+  console.log("Boa tarde!")
+} else {
+  console.log("Boa noite!")
+}
+
 /*
   03
 
@@ -51,6 +68,14 @@ const fruits = ['morango', 'banana', 'mamão']
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+let age = 28
+if (age <= 7 || age >= 65) {
+  console.log("Para você, a entrada é grátis!")
+} else {
+  console.log("A entrada é R$ 30,00.")
+}
+
+
 
 /*
   04
@@ -62,6 +87,15 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+console.log(numbers.filter(x => x >= 11 && x <= 90))
+
+newArray = []
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] >= 11 && numbers[i] <= 90) {
+    newArray.push(numbers[i])
+  }
+}
+console.log(newArray)
 
 /*
   05
@@ -77,6 +111,20 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let boo = []
+let num = []
+let str = []
+for (let i = 0; i < crazyArray.length; i++) {
+  if (typeof crazyArray[i] === `boolean`) {
+    boo.push(crazyArray[i])
+  } else if (typeof crazyArray[i] === `number`) {
+    num.push(crazyArray[i])
+  } else if (typeof crazyArray[i] === `string`) {
+    str.push(crazyArray[i])
+  }
+}
+console.log(`O crazyArray tem ${boo.length} booleans, ${num.length} números e ${str.length} strings.`)
+
 
 /*
   06
@@ -96,3 +144,16 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+let imp = []
+let par = []
+for (let i = 0; i < randomNumbers.length; i++) {
+  if (randomNumbers[i] % 2 === 0) {
+    imp.push(randomNumbers[i])
+  } else {
+    par.push(randomNumbers[i])
+  }
+}
+let junta = imp.concat(par)
+console.log(junta)
+
+console.log(`Numeros ímpares: XX, XX e XX. Números pares: XX, XX e XX.`)

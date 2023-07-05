@@ -3,299 +3,152 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonatan Marques - Projetos Javascript</title>
+    <title>Jonatan Marques - Projetos</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-
         * {
-            margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
                 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
                 sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            color: rgb(0, 0, 0, 0.7);
+        }
+
+        h3 {
+            margin: 0 0 16px 0;
+            color: rgb(0, 0, 0, 0.6);
         }
 
         body {
-            margin: 0;
-            background-image: linear-gradient(to right, #DDDDDD, #DCDCDC);
-            color: #555;
+            padding: 40px;
+            margin: 0px;
+            background-color: #DEDEDE;
         }
 
-        h4,
-        h3,
-        h2,
-        p {
-            padding-bottom: 5px;
+        .geral {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
         }
 
-        a {
-            text-decoration: none;
-            color: #555;
-        }
-
-        a:hover {
-            color: #ff3000;
-        }
-
-        .site {
-            padding: 10px;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .part1 {
-            width: 240px;
+        /* IMAGEM PERFIL - NOME - HABILIDADES */
+        .perfil {
+            grid-area: 1 / 1 / 2 / 2;
+            padding: 32px 16px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             text-align: center;
+            background-color: white;
         }
 
-        .part1-1-nome-perfil {
-            padding-top: 30px !important;
-            justify-content: center;
-        }
-
-        .part1-1-nome-perfil img {
+        .perfil img {
             width: 128px;
             height: 128px;
-            background-size: cover;
-            background-position: top center;
             border-radius: 50%;
         }
 
-
-        .part1-2-tech-stacks {
-            margin-top: 10px;
+        .perfil .borda-img {
+            width: 128px;
+            height: 128px;
+            padding: 2px;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 50%;
+            border-color: rgb(0, 0, 0, 0.7);
         }
 
-        .part1-3-links {
-            margin-top: 10px;
+        .links {
+            width: 100%;
         }
 
-        .part1-3-links div {
+        .links div {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
         }
 
-        .part2 {
-            width: 100%;
-            margin-left: 8px;
+        .proj-react {
+            grid-area: 1 / 2 / 2 / 3;
+            padding: 0px 16px;
+            background-color: #ECECEC;
         }
 
-        .part2-1-mini-proj div {
-            display: flex;
-            flex-direction: column;
+        .proj-react div {
+            padding: 16px;
+            background-color: white;
         }
 
-        .part2-2-reposits {
-            margin-top: 10px;
+        .proj-js {
+            grid-area: 2 / 2 / 3 / 3;
+            padding: 16px;
+            background-color: #ECECEC;
         }
 
-        .part2-2-reposits div {
-            display: flex;
-            flex-direction: column;
+        .proj-js div {
+            padding: 16px;
+            background-color: white;
         }
 
-        .part2-3-ferram-dev {
-            margin-top: 10px;
+        .repos {
+            grid-area: 3 / 2 / 4 / 3;
+            padding: 16px;
+            background-color: #ECECEC;
         }
 
-        .part2-3-ferram-dev div {
-            display: flex;
-            flex-direction: column;
+        .repos div {
+            padding: 16px;
+            background-color: white;
         }
 
-        .bordas {
-            border-radius: 10px;
-            box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
-            background-color: #fff;
-            padding: 10px;
+        .border {
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 4px -2px #989898;
+            -moz-box-shadow: 0 4px 4px -2px #989898;
+            -webkit-box-shadow: 0 4px 4px -2px #989898;
+            /* border: 2px solid red; */
+            padding: 15px;
+            border-radius: 7px;
         }
 
         @media (max-width: 850px) {
-            .site {
-                flex-direction: column;
+            .geral {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-column-gap: 24px;
+                grid-row-gap: 24px;
             }
 
-            .part1 {
-                width: 100%;
+            .perfil {
+                grid-area: 1 / 1 / 2 / 2;
             }
 
-            .part2 {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-        }
-
-        .blink {
-            -webkit-animation: blink .75s linear infinite;
-            -moz-animation: blink .75s linear infinite;
-            -ms-animation: blink .75s linear infinite;
-            -o-animation: blink .75s linear infinite;
-            animation: blink .75s linear infinite;
-        }
-
-        @-webkit-keyframes blink {
-            0% {
-                opacity: 1;
+            .proj-react {
+                grid-area: 2 / 1 / 3 / 2;
             }
 
-            50% {
-                opacity: 1;
+            .proj-js {
+                grid-area: 3 / 1 / 4 / 2;
             }
 
-            50.01% {
-                opacity: 0;
+            .repos {
+                grid-area: 4 / 1 / 5 / 2;
             }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @-moz-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            50.01% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @-ms-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            50.01% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @-o-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            50.01% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            50.01% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        img {
-            width: 50px;
-            height: 50px;
-            border-width: 1px;
-            border-style: none;
-        }
-
-        .ima {
-            padding: 2px;
-            border-width: 3px;
-            border-style: solid;
-            border-color: linear-gradient(to right, #DDDDDD, #DCDCDC);
-            width: 128px;
-            height: 128px;
-            border-radius: 50%;
-        }
-
-        .ima:hover {
-            border-color: red;
-        }
-
-        .centraliza {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .alinha-centro {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .alinha-centro img {
-            padding: 5px;
         }
     </style>
 </head>
 
 <body>
-    <div class="site">
-        <div class="part1">
-            <div class="part1-1-nome-perfil bordas">
-                <div class="centraliza">
-                    <div class="ima">
-                        <a target="_blank" href="https://github.com/devjonatanm">
-                            <img src="https://avatars.githubusercontent.com/u/102691032?v=4">
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <a target="_blank" href="https://github.com/devjonatanm">
-                        <h2>Jonatan Marques</h2>
-                    </a>
-                </div>
+    <div class="geral">
+        <div class="perfil border">
+            <div class="borda-img"><img src="perfil.jpg" alt=""></div>
+            <div>
+                <h1>Jonatan Marques</h1>
             </div>
-            <div class="part1-2-tech-stacks bordas">
-                <div>
-                    <h4>Habilidades</h4>
-                </div>
-                <div>
-                    < JS, React.js />
-                </div>
+            <div>
+                <p>⚡ JavaScript | Node.js | React ⚡</p>
             </div>
-            <div class="part1-3-links bordas">
+            <div class="links">
                 <div>
                     <div>GitHub</div>
                     <div><a target="_blank" href="https://github.com/devjonatanm">@devjonatanm</a></div>
@@ -310,172 +163,68 @@
                 </div>
             </div>
         </div>
-        <div class="part2">
-            <div class="part2-1-mini-proj bordas">
-                <div>
-                    <h3>Projetos React.js</h3>
-                </div>
-                <div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/AuthentFirebaseReactJS">
-                            <img
-                                src="https://raw.githubusercontent.com/devjonatanm/AuthentFirebaseReactJS/main/image.jpg">
-                            AuthentFirebaseReactJS
-                        </a>
-                    </div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/BuscaCepReactJS">
-                            <img src="https://raw.githubusercontent.com/devjonatanm/BuscaCepReactJS/main/image.jpg">
-                            BuscaCepReactJS
-                        </a>
-                    </div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/CalculatorReactJS">
-                            <img src="https://raw.githubusercontent.com/devjonatanm/CalculatorReactJS/main/image.jpg">
-                            CalculatorReactJS
-                        </a>
-                    </div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/CryptoReactJS">
-                            <img src="https://raw.githubusercontent.com/devjonatanm/CryptoReactJS/main/image1.jpg">
-                            CryptoReactJS
-                        </a>
-                    </div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/RandomPersonReactJS">
-                            <img src="https://raw.githubusercontent.com/devjonatanm/RandomPersonReactJS/main/image.jpg">
-                            RandomPersonReactJS
-                        </a>
-                    </div>
-                    <div class="alinha-centro">
-                        <a href="https://github.com/devjonatanm/VerificaUsuarioGitReactJS">
-                            <img
-                                src="https://raw.githubusercontent.com/devjonatanm/VerificaUsuarioGitReactJS/main/image.jpg">
-                            VerificaUsuarioGitReactJS
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="part2-1-mini-proj bordas">
-                <div>
-                    <h3>Projetos Javascript</h3>
-                </div>
-                <div>
-                    <div class="alinha-centro">
-                        <a href="projects/CrudClientJS/index.html">
-                            <img src="projects/CrudClientJS/image.jpg">
-                            CrudClientJS
-                        </a>
-                    </div>
 
-                    <div class="alinha-centro">
-                        <a href="projects/OurMenuJS/index.html">
-                            <img src="projects/OurMenuJS/image.jpg">
-                            OurMenuJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/BateriaTecladoJS/index.html">
-                            <img src="projects/BateriaTecladoJS/image.jpg">
-                            BateriaTecladoJS
-                        </a>
-                    </div>
-
-                    <!-- <div class="alinha-centro">
-                        <a href="projects/FiltroEmItensJS/index.html">
-                            <img src="projects/FiltroEmItensJS/image.jpg">
-                            FiltroEmItensJS
-                        </a>
-                    </div> -->
-
-                    <div class="alinha-centro">
-                        <a href="projects/FlappyBirdJS/index.html">
-                            <img src="projects/FlappyBirdJS/image.jpg">
-                            FlappyBirdJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/FormularioJS/index.html">
-                            <img src="projects/FormularioJS/image.jpg">
-                            FormularioJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/GeleriaJS/index.html">
-                            <img src="projects/GeleriaJS/image.jpg">
-                            GaleriaJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/GeraLoremIpsumJS/index.html">
-                            <img src="projects/GeraLoremIpsumJS/image.jpg">
-                            GeraLoremIpsumJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/PesquisaWikiJS/index.html">
-                            <img src="projects/PesquisaWikiJS/image.jpg">
-                            PesquisaWikiJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/RelogioInterativoJS/index.html">
-                            <img src="projects/RelogioInterativoJS/image.jpg">
-                            RelogioInterativoJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/ResponsividadeCSS/index.html">
-                            <img src="projects/ResponsividadeCSS/image.jpg">
-                            ResponsividadeCSS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/SliderJS/index.html">
-                            <img src="projects/SliderJS/image.jpg">
-                            SliderJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/ToDoListJS/index.html">
-                            <img src="projects/ToDoListJS/image.jpg">
-                            ToDoListJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/UrnaJS/index.html">
-                            <img src="projects/UrnaJS/image.jpg">
-                            UrnaJS
-                        </a>
-                    </div>
-
-                    <div class="alinha-centro">
-                        <a href="projects/TabXadrezCSS/index.html">
-                            <img src="projects/TabXadrezCSS/image.jpg">
-                            TabXadrezCSS
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="part2-2-reposits bordas">
-                <div>
-                    <a target="_blank" href="https://github.com/devjonatanm?tab=repositories">
-                        <h3>Repositórios</h3>
+        <div class="proj-react border">
+            <h3>GitHub Projects React.js</h3>
+            <div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/AuthentFirebaseReactJS">
+                        AuthentFirebaseReactJS
                     </a>
                 </div>
-                <div id="repo-js"></div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/BuscaCepReactJS">
+                        BuscaCepReactJS
+                    </a>
+                </div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/CalculatorReactJS">
+
+                        CalculatorReactJS
+                    </a>
+                </div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/CryptoReactJS">
+                        CryptoReactJS
+                    </a>
+                </div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/RandomPersonReactJS">
+                        RandomPersonReactJS
+                    </a>
+                </div>
+                <div class="alinha-centro">
+                    <a href="https://github.com/devjonatanm/VerificaUsuarioGitReactJS">
+                        VerificaUsuarioGitReactJS
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="proj-js border">
+            <h3>GitHub Projects Javascript</h3>
+            <div>
+                <div class="alinha-centro">
+                    <a href="projects-js/CrudClientJS/index.html">
+                        CrudClientJS
+                    </a>
+                </div>
+
+                <div class="alinha-centro">
+                    <a href="projects-js/OurMenuJS/index.html">
+                        OurMenuJS
+                    </a>
+                </div>
+
+                <div class="alinha-centro">
+                    <a href="projects-js/BateriaTecladoJS/index.html">
+                        BateriaTecladoJS
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="repos border">
+            <h3>GitHub Repositórios</h3>
+            <div id="repo-js"></div>
         </div>
     </div>
 
@@ -493,9 +242,9 @@
         }
 
         repositorioNoGithub().then((apigit) => {
+            console.log(apigit)
+            
             let juntando = ``
-            console.log(apigit.length)
-
             for (let i = 0; i < apigit.length; i++) {
                 if (apigit[i].homepage === "" || apigit[i].homepage === null) {
                     juntando += `<p>${i + 1} - <a target="_blank" href="https://github.com/${apigit[i].full_name}">${apigit[i].name}</a></p>`;
@@ -503,12 +252,10 @@
                     juntando += `<p>${i + 1} - <a target="_blank" href="https://github.com/${apigit[i].full_name}">${apigit[i].name}</a> - 
                     <a target="_blank" href="${apigit[i].homepage}"> [Acessar Website]</a></p>`;
                 }
-
             }
-
             let el = document.querySelector("#repo-js");
             el.innerHTML = juntando;
-
+            
         });
     </script>
 </body>

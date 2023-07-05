@@ -1,2 +1,0 @@
-# GeleriaJS
-![](image.jpg)

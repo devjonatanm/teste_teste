@@ -5,18 +5,18 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(true, false)
+console.log(!true, !false)
 
 /*
   02
 
   - Abaixo do array "animals", verifique se o animal "leão" **não** existe no  
-    array. Se não existir, exiba no console a mensagem "Leão não existe no array  
-    animals.";
+    array. Se não existir, exiba no console a mensagem "Leão não existe no array animals.";
   - Se existir, exiba no console a mensagem "Existe um leão no array animals.".
 */
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
+console.log(`${animals.includes("leão") ? "Existe um leão no array animals." : "Leão não existe no array animals."}`)
 
 /*
   03

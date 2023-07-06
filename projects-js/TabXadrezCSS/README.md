@@ -1,2 +1,0 @@
-# TabXadrezCSS
-![](image.jpg)

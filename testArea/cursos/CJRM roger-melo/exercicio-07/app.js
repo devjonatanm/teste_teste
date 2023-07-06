@@ -5,18 +5,18 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(!true, !false)
+//console.log(!true, !false)
 
 /*
   02
 
   - Abaixo do array "animals", verifique se o animal "leão" **não** existe no  
-    array. Se não existir, exiba no console a mensagem "Leão não existe no array animals.";
+    arra.y. Se não existir, exiba no console a mensagem "Leão não existe no array animals.";
   - Se existir, exiba no console a mensagem "Existe um leão no array animals.".
 */
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
-console.log(`${animals.includes("leão") ? "Existe um leão no array animals." : "Leão não existe no array animals."}`)
+//console.log(`${animals.includes("leão") ? "Existe um leão no array animals." : "Leão não existe no array animals."}`)
 
 /*
   03
@@ -30,6 +30,13 @@ console.log(`${animals.includes("leão") ? "Existe um leão no array animals." :
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+let sum = 0
+for (let i = 0; i < randomNumbers.length; i++) {
+  if (sum < 400) {
+    sum += randomNumbers[i]
+  }
+}
+//console.log("A soma ultrapassou 400. Até aqui, o valor atual é " + sum + ".")
 
 /*
   04
@@ -41,6 +48,13 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+let array = []
+for (let i = 0; i < sentence.length; i++) {
+  if (sentence[i] !== 'certeza') {
+    array.push(sentence[i])
+  }
+}
+//console.log(array.join(' '))
 
 /*
   05
@@ -51,46 +65,84 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 
   "
     3 informações sobre o array randomValues:
-      - As primeiras 4 strings são XX, XX, XX e XX;
-      - Até que as primeiras 4 strings fossem iteradas, XX booleans foram iterados;
-      - O array foi iterado por XX vezes.
+      ✅ - As primeiras 4 strings são XX, XX, XX e XX; 
+      ✅ - Até que as primeiras 4 strings fossem iteradas, XX booleans foram iterados;
+      ✅ - O array foi iterado por XX vezes.
   "
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
+let armazena = []
+let ateQuartaString = 0
+let primQuatrStrings = []
+let boolIterads = 0
+let iteradoAte = 0
+
+for (let i = 0; i < randomValues.length; i++) {
+  if (ateQuartaString <= 4) {
+    armazena.push(randomValues[i])
+  }
+  if (typeof randomValues[i] === 'string') {
+    ateQuartaString++
+  }
+  if (ateQuartaString <= 4 && typeof randomValues[i] === 'string') {
+    primQuatrStrings.push(randomValues[i])
+  }
+  if (ateQuartaString <= 4 && typeof randomValues[i] === 'boolean') {
+    boolIterads++
+  }
+  if (ateQuartaString <= 4) {
+    iteradoAte++
+  }
+}
+/* console.log(`- As primeiras 4 strings são ${primQuatrStrings[0]}, ${primQuatrStrings[1]}, ${primQuatrStrings[2]} e ${primQuatrStrings[3]}; 
+- Até que as primeiras 4 strings fossem iteradas, ${boolIterads} booleans foram iterados;
+- O array foi iterado por ${iteradoAte}  vezes.`) */
+
 
 /*
   06
 
-  - Descomente a constante abaixo atribua a ela algum tipo de bebida. Exemplo:  
+  ✅ - Descomente a constante abaixo atribua a ela algum tipo de bebida. Exemplo:  
     água, refrigerante ou suco;
-  - Utilize um switch statement com cases para essas 3 possibilidades de bebida;
-  - Se o tipo da bebida é água, atribua à uma variável a mensagem "Substância 
+  ✅- Utilize um switch statement com cases para essas 3 possibilidades de bebida;
+  ✅- Se o tipo da bebida é água, atribua à uma variável a mensagem "Substância 
     química cujas moléculas são formadas por dois átomos de hidrogênio e um de 
     oxigênio.";
-  - Se o tipo da bebida é refrigerante, a mensagem "Bebida não alcoólica e não 
+  ✅- Se o tipo da bebida é refrigerante, a mensagem "Bebida não alcoólica e não 
     fermentada, fabricada industrialmente, à base de água mineral e açúcar." 
     deve ser armazenada;
-  - Se é suco, atribua a mensagem "Bebida produzida do líquido extraído de 
+  ✅- Se é suco, atribua a mensagem "Bebida produzida do líquido extraído de 
     frutos.";
-  - Se nenhum desses 3 tipos de bebida der match, a variável deve armazenar 
+  ✅- Se nenhum desses 3 tipos de bebida der match, a variável deve armazenar 
     "Bebida desconhecida.";
-  - Exiba a mensagem no console. Teste também as outras possibilidades de tipo  
+  ✅- Exiba a mensagem no console. Teste também as outras possibilidades de tipo  
     da bebida além da que você escolheu.
 */
 
-// const drinkType
+const drinkType = 'água'
+switch(drinkType){
+  case 'água': 
+    console.log("Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.")
+    break
+  case 'refrigerante': 
+    console.log("Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.")
+    break
+  case 'suco': 
+    console.log("Bebida produzida do líquido extraído de frutos.")
+    break
+  default: 
+    console.log("Bebida desconhecida.")
+    break
+}
 
 /*
   07
 
-  - Reescreva o código comentado abaixo, utilizando um switch statement;
-  - Depois de escrever o switch, modifique o valor da declaração da const "a"  
+  ✅- Reescreva o código comentado abaixo, utilizando um switch statement;
+  ✅- Depois de escrever o switch, modifique o valor da declaração da const "a"  
     para testar o switch que você escreveu.
 */
-
-const a = 2
-
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
 // } else if (a === 1) {
@@ -98,3 +150,17 @@ const a = 2
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
+
+const a = 3
+switch(a){
+  case 1:
+    console.log(`O valor de "a" é ${a}`)
+    break
+  case 2:
+    console.log(`O valor de "a" é ${a}`)
+    break
+  default:
+    if(a!==0 && a!==1){
+      console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+    }  
+}

@@ -6,6 +6,12 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
+function sum(a, b) {
+  return a + b
+}
+//console.log(sum(5, 8))
+
+
 
 /*
   02
@@ -14,25 +20,34 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+const divisao = function (a, b) {
+  return a / b
+}
+//console.log(divisao(500,20))
+
 
 /*
   03
 
-  - Implemente uma função que apenas exibe no console o valor recebido por  
-    parâmetro;
-  - Previna que o parâmetro dessa função receba undefined;
+  - Implemente uma função que apenas exibe no console o valor recebido por parâmetro;
+  - Previna que o parâmetro dessa função receba undefined; 
   - Faça a string abaixo ser exibida 7x no console;
   - A cada exibição, substitua o "X" pela informação correta;
   - Não repita (manualmente) a invocação da função ou do console.log().
 
   "Esta é a Xª vez que essa string é exibida."
 */
+function vezesSete(x) {
+  for (let i = 1; i < x; i++) {
+    console.log("Esta é a " + i + "ª vez que essa string é exibida.")
+  }
+  return console.log("Esta é a " + x + "ª vez que essa string é exibida.")
+}
+//vezesSete(7)
 
 /*
   04
 
-  - Comente o código acima, de forma que a string não seja mais exibida no  
-    console;
   - Implemente uma função que retorna um novo array com as strings do array  
     "millennialWords" em letras maiúsculas;
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
@@ -40,6 +55,14 @@
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+function letrasMaiusc(arrayAntes) {
+  newArray = []
+  for (let i = 0; i < arrayAntes.length; i++) {
+    newArray.push(arrayAntes[i].toUpperCase())
+  }
+  return newArray
+}
+//console.log(letrasMaiusc(millennialWords))
 
 /*
   05
@@ -53,6 +76,20 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+function positivNegativ(array) {
+  let positivos = []
+  let negativos = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      positivos.push(array[i])
+    } else {
+      negativos.push(array[i])
+    }
+  }
+  return console.log(`O array "randomNumbers" possui ${array.length} números, sendo ${positivos.length} positivos e ${negativos.length} negativos.`)
+}
+//positivNegativ(randomNumbers)
+
 
 /*
   06
@@ -64,7 +101,17 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
+function getOddNumbers(array) {
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 !== 0) {
+      newArray.push(array[i])
+    }
+  }
+  return newArray
+}
+//console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
 
 /*
   07
@@ -102,3 +149,9 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+
+let novoArray = []
+for (let i = 0; i < functions.length; i++) {
+  novoArray.push(functions[i]())
+}
+console.log(novoArray.join(' '))

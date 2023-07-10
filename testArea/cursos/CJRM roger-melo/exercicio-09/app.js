@@ -13,9 +13,10 @@
     valor no console.
 */
 
-function convertToString (value) {
+const convertToString = value => {
   return String(value)
 }
+//console.log(convertToString(55665))
 
 /*
   02
@@ -23,6 +24,9 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+const quantString = string => string.length
+//console.log(quantString('jonatan marques'))
+
 
 /*
   03
@@ -33,6 +37,9 @@ function convertToString (value) {
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const letrasMaiusc = string => string.toLowerCase()
+//console.log(letrasMaiusc("CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"))
+
 
 /*
   04
@@ -40,6 +47,11 @@ function convertToString (value) {
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const ondeindex = (letra, string) => {
+  const array = string.split('')
+  return array.indexOf(letra)
+}
+//console.log(ondeindex('m','jonatan marques'))
 
 /*
   05
@@ -47,6 +59,11 @@ function convertToString (value) {
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+//vou usar o includes
+const existNoArray = (item, array) => {
+  return array.includes(item)
+}
+//console.log(existNoArray(8,[3,4,8,2,0,3,9]))
 
 /*
   06
@@ -54,6 +71,8 @@ function convertToString (value) {
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const juntaArrays = (array1, array2) => array1.concat(array2)
+//console.log(juntaArrays([3, 5, 2, 8, 3],[7, 8, 9, 10, 28]))
 
 /*
   07
@@ -61,6 +80,11 @@ function convertToString (value) {
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+const removeUlt = array => {
+  array.pop()
+  return array
+}
+//console.log(removeUlt([1,2,3,4,5,6,7,8,9,10]))
 
 /*
   08
@@ -68,6 +92,14 @@ function convertToString (value) {
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+const isNull = e => {
+  if (e === null) {
+    return null
+  }
+}
+// console.log(isNull(null))
+// console.log(isNull('null'))
+
 
 /*
   09
@@ -79,6 +111,13 @@ function convertToString (value) {
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const funcParam = (nome, callback) => {
+  return callback(nome)
+}
+const secondFunc = nome => {
+  console.log(nome)
+}
+//funcParam('Jonatan', secondFunc)
 
 /*
   10
@@ -90,6 +129,9 @@ function convertToString (value) {
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const triploNumber = (n, callback) => callback(n)
+const triplo = n => n * 3
+//console.log(triploNumber(33, triplo))
 
 /*
   11
@@ -101,6 +143,9 @@ function convertToString (value) {
 */
 
 const numbers = [1, 2, 3]
+// numbers.forEach(element => {
+//   console.log(`O ${element}º item do array [${numbers[0]}, ${numbers[1]}, ${numbers[2]}] é ${element}.`)
+// });
 
 /*
   12
@@ -112,10 +157,14 @@ const numbers = [1, 2, 3]
 
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
-
 for (let i = 0; i < letters.length; i++) {
   lettersCopy.push(letters[i])
 }
+
+letters.forEach(element => {
+  lettersCopy.push(element)
+})
+//console.log(lettersCopy)
 
 /*
   13
@@ -135,18 +184,18 @@ for (let i = 0; i < letters.length; i++) {
   </article>
 */
 
-const section = document.querySelector('[data-js="section"]')
-
+//const section = document.querySelector('[data-js="section"]')
 const review = [
   'Eu sempre adorei o filme e quando descobri que tinha o livro também fiquei doido. Demorei um pouco mas acabei comprando e finalmente li \o/.',
   'O primeiro filme foi baseado nesse livro, porém o livro (como sempre) é muito mais completo, com mais personagens, mais acontecimentos e até mesmo mais dinossauros. Na verdade nesse livro tem coisas do segundo e terceiro filme também, eles mudaram bastante nos filmes, acho que pra ficar mais comercial, e se o filme é bom, o livro é 100 vezes melhor.',
   'Michael é um ótimo autor, esse sim pesquisa muito antes de escrever um livro, além da história que já prende sua atenção, ele fala bastante de genética (pra explicar como os dinossauros foram criados) e acaba falando um pouco de programação (informática), por causa dos programas avançados e modernos que o parque tinha. E isso foi uma das coisas que eu achei muito legal, ele explica as coisas com gráficos, tabelas, códigos ... enfim, o cara é foda hahaha.',
   'Recomendo esse livro pra quem curte uma boa história de ficção. Apesar de muita gente pensar que o livro não tem graça, porque o legal mesmo é ver o dinossauro no filme, com todos os efeitos especiais, eu digo pra deixar esse pensamento de lado, pois a história é tão bem contada e os detalhes são tão bem relatados, que você passa a fazer parte da história, e vive todas as emoções hahaha.'
 ]
-
 let paragraphs = ''
-
-section.innerHTML = paragraphs
+review.forEach(element => {
+  paragraphs += `<p>${element}</p>`
+})
+//section.innerHTML = paragraphs
 
 /*
   14
@@ -166,5 +215,36 @@ section.innerHTML = paragraphs
   - Se o array conter 4 ou mais nomes, a mensagem retornada deve ser  
     "NOME_1, NOME_2 e mais X pessoas curtiram isso". O "X" deve ser substituído  
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
-    pessoas já mencionadas no início da mensagem).
+    pessoas já mencionadas no início da mensagem).  
 */
+
+let pessoasQueCurtiram = ['pedrinho', 'joaozinho','jefer','dudu','fernand', 'oliver']
+const numeroCurtidas = (pessoas) => {
+  if (pessoas.length === 1) {
+    return pessoas[0] + " curtiu isso"
+  }
+  if (pessoas.length === 2) {
+    return pessoas[0] + " e " + pessoas[1] + " curtiram isso"
+  }
+  if (pessoas.length === 3) {
+    return pessoas[0] + ", " + pessoas[1] + " e " + pessoas[2] + " curtiram isso"
+  }
+  if (pessoas.length >= 4) {
+    return pessoas[0] + ", " + pessoas[1] + " e mais "+pessoas.length+" pessoas curtiram isso"
+  }
+
+  if (pessoas === undefined) {
+    return "Ninguém curtiu isso"
+  }
+}
+
+console.log(numeroCurtidas(pessoasQueCurtiram))
+
+
+
+
+
+
+
+
+

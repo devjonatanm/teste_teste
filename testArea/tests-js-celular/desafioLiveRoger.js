@@ -29,7 +29,7 @@ const objs = [
     { x: 7, y: 8 }
 ]
 //objs[4].x
-console.log(objs[3].x)
+//console.log(objs[3].x)
 
 /*
 02
@@ -53,7 +53,7 @@ const obj = {
 }
 
 //obj.z()  <<
-console.log(obj.w())
+//console.log(obj.w())
 
 /*
 03
@@ -66,12 +66,15 @@ ser um valor diferente do anterior.
 
 Faça com que uma das invocações retorne true.
 */
+const eNull = arg => arg === null // corrigido pelo Roger
+
+//console.log sempre retorna undefined
 function boo(x) {
-    return console.log(null === x)
+    return null === x // fez antes do retorno
 }
-boo(0)
-boo(null)
-boo(5)
+//console.log(boo(0))
+//console.log(boo(null))
+//console.log(boo(5))
 
 
 /*
@@ -90,10 +93,20 @@ preenchidos, a função deve retornar a string abaixo:
 argumentos.
 */
 
+// pode ser utilzado includes
 function multTres(x = 'Insira todos os argumentos!', y = 'Insira todos os argumentos!', z = 'Insira todos os argumentos!') {
     return console.log(x * y * z)
 }
-multTres(2, 4, 2)
+//multTres(2, 4, 2)
+
+const multiplicar = (a, b, c) => {  // corrigido pelo Roger
+    if (a === undefined || b === undefined || c === undefined) {
+        return 'Insira todos os argumentos!'
+    }
+}
+//console.log(multiplicar())
+//console.log(multiplicar(1))
+
 
 /*
 05
@@ -117,12 +130,22 @@ const y = w => {
         console.log('Executou if!')
     }
 }
+// extensa e mais legivel
+// const y = w => { // corrigido pelo Roger
+//     const eIgualFalse = w[2] === false
+//     const eIgualB = 'b' === w[0]
+//     const eIgual3 = w[1] === 3
+
+//     if (eIgualFalse && eIgualB && eIgual3) {
+//         console.log('Executou if!')
+//     }
+// }
 
 const a = 'b'
 const b = false
 const c = 3
 
-y([a, c, b])
+//y([a, c, b])
 
 /*
 06
@@ -135,28 +158,57 @@ Crie uma função com as seguintes características:
 argumento. OK
 
 3. Se dois argumentos forem passados, retorne a soma dos 
-dois argumentos. OK
+dois argumentos.OK
 
 4. Se todos os argumentos forem passados, retorne a soma do 
-primeiro com o terceiro. OK
+primeiro com o terceiro.OK
 
->> NÃO CONSEGUI ESTES ABAIXO <<
 5. Se nenhum argumento for passado, retorne o valor booleano 
-false. 
+false. OK
 
 6. E ainda, se nenhuma das condições acima forem atendidas, 
 retorne null.
 */
-function triArgs(x = undefined, y = undefined, z = undefined) {
-    if (x !== 1 && y === undefined && z === undefined) {
-        return console.log(x)
-    } else if (x !== 1 && y !== 0 && z === undefined) {
-        return console.log(x + y)
-    } else if (x !== 1 && y !== 0 && z !== 0) {
-        return console.log(x + z)
-    } else if (arguments[0] === undefined && arguments[1] === undefined && arguments[2] === undefined) {
-        return console.log('aaaaaaaaaa')
+// const triArgs = (x, y, z) => {
+//     if (x !== 1 && y === undefined && z === undefined) {
+//         return x
+//     } else if (x !== 1 && y !== 0 && z === undefined) {
+//         return x + y
+//     } else if (x !== 1 && y !== 0 && z !== 0) {
+//         return x + z
+//     } else if (x === undefined && y === undefined && z === undefined) {
+//         return false
+//     }
+// }
+
+const triArgs = (x, y, z) => {
+    let a = 0
+    let xIsNumber = typeof x === "number"
+    let yIsNumber = typeof y === "number"
+    let zIsNumber = typeof z === "number"
+
+    let xDifentUndef = x !== undefined
+    let yDifentUndef = y !== undefined
+    let zDifentUndef = z !== undefined
+
+    let xEqualUnd = x === undefined
+    let yEqualUnd = y === undefined
+    let zEqualUnd = z === undefined
+
+
+    if (xIsNumber && xDifentUndef && yEqualUnd && zEqualUnd) {
+        a = x
+    } else if (xIsNumber && yIsNumber && xDifentUndef && yDifentUndef && zEqualUnd) {
+        a = x + y
+    } else if (xIsNumber && zDifentUndef && xDifentUndef && yDifentUndef && zDifentUndef) {
+        a = x + z
+    } else if (xEqualUnd && yEqualUnd && zEqualUnd) {
+        a = false
+    } else {
+        a = null
     }
+
+    return a
 }
 
 /*
@@ -169,8 +221,7 @@ Invoque a função acima testando as possibilidades abaixo:
 - Com dois argumentos;
 - Com três argumentos.
 */
-triArgs()
-triArgs(2)
-triArgs(2, 6)
-triArgs(2, 3, 8)
-//triArgs('t')
+console.log(triArgs())
+console.log(triArgs('ss',[],{}))
+console.log(triArgs(2, 6))
+console.log(triArgs(2, 3, 8))

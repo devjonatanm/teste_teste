@@ -210,18 +210,48 @@ const triArgs = (x, y, z) => {
 
     return a
 }
+// console.log(triArgs())
+// console.log(triArgs('ss',[],{}))
+// console.log(triArgs(2, 6))
+// console.log(triArgs(2, 3, 8))
+
+// CORRIGIDO PELO ROGER! EM LIVE
+const eUndefined = arg => arg === undefined
+const somar = (arg1, arg2, arg3) => {
+    const temSoArg1 = arg1 !== undefined && eUndefined(arg2) && eUndefined(arg3)
+    const temSoArg1E2 = arg1 !== undefined && arg2 !== undefined && eUndefined(arg3)
+    const temTodosArgs = arg1 !== undefined && arg2 !== undefined && arg3 !== undefined
+    const temNenhumArg = eUndefined(arg1) && eUndefined(arg2) && eUndefined(arg3)
+
+    if (temSoArg1) {
+        return arg1
+    }
+    if (temSoArg1E2) {
+        return arg1 + arg2
+    }
+    if (temTodosArgs) {
+        return arg1 + arg3
+    }
+    if (temNenhumArg) {
+        return false
+    }
+    return null
+}
+console.log(somar(1))
+console.log(somar(1, 2))
+console.log(somar(1, 2, 3))
+console.log(somar())
+console.log(somar(undefined, 1, 2))
+
+
 
 /*
 07
 
-Invoque a função acima testando as possibilidades abaixo: 
+Invoque a função acima testando as possibilidades abaixo:
 
 - Com nenhum argumento;
 - Com um argumento;
 - Com dois argumentos;
 - Com três argumentos.
 */
-console.log(triArgs())
-console.log(triArgs('ss',[],{}))
-console.log(triArgs(2, 6))
-console.log(triArgs(2, 3, 8))

@@ -27,23 +27,23 @@ invocação da função eUndefined.
 const eUndefined = arg => arg === undefined
 
 const somar = (arg1, arg2, arg3) => {
-  const temSoArg1 = arg1 !== undefined && eUndefined(arg2) && eUndefined(arg3)
-  const temSoArg1E2 = arg1 !== undefined && arg2 !== undefined && eUndefined(arg3)
-  const temTodosArgs = arg1 !== undefined && arg2 !== undefined && arg3 !== undefined
+  const temSoArg1 = !eUndefined(arg1) && eUndefined(arg2) && eUndefined(arg3)
+  const temSoArg1E2 = !eUndefined(arg1) && !eUndefined(arg2) && eUndefined(arg3)
+  const temTodosArgs = !eUndefined(arg1) && !eUndefined(arg2) && !eUndefined(arg3)
   const temNenhumArg = eUndefined(arg1) && eUndefined(arg2) && eUndefined(arg3)
 
   if (temSoArg1) {
     return arg1
   }
-  
+
   if (temSoArg1E2) {
     return arg1 + arg2
   }
-  
+
   if (temTodosArgs) {
     return arg1 + arg3
   }
-  
+
   if (temNenhumArg) {
     return false
   }
@@ -51,11 +51,11 @@ const somar = (arg1, arg2, arg3) => {
   return null
 }
 
-somar(1)
-somar(1, 2)
-somar(1, 2, 3)
-somar()
-somar(undefined, 1, 2)
+// console.log(somar(1))
+// console.log(somar(1, 2))
+// console.log(somar(1, 2, 3))
+// console.log(somar())
+// console.log(somar(undefined, 1, 2))
 
 /*
 02
@@ -83,6 +83,12 @@ const concursos = [
   { id: 'd687jsfke', nome: 'Concurso Programadores Garotos de Programa' },
 ]
 
+const pegaNomeConcurso = id => {
+  const verifica = concursos.find(e => e.id === id)
+  return verifica !== undefined ? verifica.nome : 'Concurso não encontrado'
+}
+//console.log(pegaNomeConcurso('d687jsfke'))
+
 /*
 03
 
@@ -92,13 +98,13 @@ Refatore a função abaixo para apenas uma única linha.
 const eAMelhorSerie = serie => {
   if (serie === 'Breaking Bad') {
     return '✅ Sim'
+  } else {
+    return '❌ Não'
   }
-  
-  return '❌ Não'
 }
 
-eAMelhorSerie('Breaking Bad')
-eAMelhorSerie('Game of Thrones')
+// console.log(eAMelhorSerie('Breaking Bad'))
+// console.log(eAMelhorSerie('Game of Thrones'))
 
 /*
 04
@@ -126,6 +132,11 @@ const custos = [
   { mes: 'abril', custoTotal: 6325 },
   { mes: 'maio', custoTotal: 6748 },
 ]
+const mediaTotal = array => {
+  const media = array.reduce((acc, valor) => acc + valor.custoTotal, 0) / array.length
+  return media
+}
+//console.log(`A média é ${mediaTotal(custos).toFixed(2)}`)
 
 /*
 05
@@ -140,6 +151,11 @@ Teste a função utilizando o array abaixo.
 */
 
 const palavras = ['ovo', 'áudio', 'oi', 'telefones', 'ovni']
+const temTresLetras = array => {
+  const verifica = array.filter(e => e.length > 3)
+  return verifica
+}
+//console.log(temTresLetras(palavras))
 
 /*
 06
@@ -163,8 +179,7 @@ const dobrar = numeros => {
 
   for (let i = 0; i < numeros.length; i++) {
     numerosDobrados.push(numeros[i] * 2)
-    return numerosDobrados
   }
+  return numerosDobrados
 }
-
-// console.log(dobrar([1, 2, 3]))
+console.log(dobrar([1, 2, 3]))

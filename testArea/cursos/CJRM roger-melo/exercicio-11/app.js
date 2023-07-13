@@ -46,7 +46,7 @@ const age = num => {
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".✅
 */
 const car = {
-  name: 'PORTOFINO',
+  name: 'Spider',
   brand: 'Ferrari',
   colors: ['vermelho', 'branco', 'preto'],
   isRunning: false,

@@ -10,12 +10,20 @@ const elementsInsideDiv = Array.from(div.children)
 
 elementsInsideDiv.forEach(element => {
   element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
+    //console.log('Clicou no filho da div.')
+    const tag = element.innerHTML.toUpperCase()
+    console.log(`Clicou no ${tag}, filho da div.`)
+    document.querySelector('h2').innerHTML = `Clicou no ${tag}, filho da div.`
   })
 })
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
+  //console.log('Clicou na div.')
+  if (document.querySelector('h2').innerHTML === ' Clicou na div.'/*  && document.querySelector('h2').innerHTML !== ' Clicou na div.' */) {
+    document.querySelector('h2').innerHTML = ' Clicou na div.'
+  } else {
+    document.querySelector('h2').innerHTML += ' Clicou na div.'
+  }
 })
 
 /*
@@ -29,10 +37,14 @@ div.addEventListener('click', () => {
 /*
   03
 
-  - No index.html, abaixo da div sem classe, insira um h2;
+  - No index.html, abaixo da div sem classe, insira um h2; OK
   - Faça com que a mensagem de clique na div e a mensagem de clique em algum
-    filho da div, ao invés de ser exibida no console, seja inserida neste h2.
+    filho da div, ao invés de ser exibida no console, seja inserida neste h2. OK
 */
+const h2 = document.createElement('h2')
+div.appendChild(h2)
+
+
 
 /*
   04
@@ -40,6 +52,10 @@ div.addEventListener('click', () => {
   - Faça com que quando o texto do h2 for copiado, a mensagem "Texto copiado!"  
     seja exibida no console.
 */
+h2.addEventListener('copy', e => {
+  return console.log("Texto copiado!")
+})
+
 
 /*
   05
@@ -48,6 +64,14 @@ div.addEventListener('click', () => {
     o texto que ela tem por 
     "Eixo X: COORDENADA_EIXO_X | Eixo Y: COORDENADA_EIXO_Y".
 */
+let egg = document.querySelector('.egg')
+console.log(egg)
+
+egg.addEventListener('mousemove', (e) => {
+  egg.innerText = `Eixo X: ${e.clientX} | Eixo Y: ${e.clientY}`;
+  // Screen X/Y: ${e.screenX}, ${e.screenY}
+  // Client X/Y: ${e.clientX}, ${e.clientY}
+})
 
 /*
   06
@@ -55,6 +79,12 @@ div.addEventListener('click', () => {
   - Modifique a cor do ovo para "lightgoldenrodyellow" quando o botão for 
     clicado.
 */
+const button = document.querySelector('button')
+button.addEventListener('click', e => {
+  document.querySelector('.egg').style.backgroundColor = "lightgoldenrodyellow";
+  return
+})
+
 
 /*
   07
@@ -76,3 +106,6 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+
+//VERIFICA SE HÁ ALGUM ELEMENTO QUE CONTENHA 'Front-end developer' oposto do every()
+console.log(people.some(e => e.profession === 'Front-end developer'))

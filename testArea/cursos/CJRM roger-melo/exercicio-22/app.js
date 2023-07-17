@@ -7,6 +7,7 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
+//console.log(names.sort())
 
 /*
   02
@@ -22,6 +23,7 @@ const characters = [
   { id: 01, name: 'Scar' },
   { id: 04, name: 'Mufasa' }
 ]
+//console.log(characters.sort((a, b) => a.id - b.id))
 
 /*
   03
@@ -32,6 +34,8 @@ const characters = [
 */
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
+//console.log(numbers.sort((a, b) => a - b))
+
 
 /*
   04
@@ -40,6 +44,7 @@ const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
+//console.log(randomNumbers.find(e => e > 50))
 
 /*
   05
@@ -50,6 +55,7 @@ const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 */
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
+//console.log(people.sort().reverse())
 
 /*
   06
@@ -60,12 +66,21 @@ const people = ['Cauã', 'Alfredo', 'Bruno']
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+let array = []
+for (let i = 0; i < ingredients.length; i++) {
+  if (ingredients[i].charAt(ingredients[i].length - 1) !== 'a') {
+    array.push(`${ingredients[i]} cozido`)
+  } else {
+    array.push(`${ingredients[i]} cozida`)
+  }
+}
+//console.log(array.join(', '))
 
 /*
   07
   
   - À partir do array abaixo, obtenha e exiba no console o total de pessoas que 
-    assistiram apenas os filmes da Disney.
+    assistiram apenas os filmes da 'Disney'.
 */
 
 const topBrazilmovies = [
@@ -80,6 +95,8 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+//console.log(topBrazilmovies.filter(e => e.distributedBy === 'Disney').reduce((acc, act) => acc + act.peopleAmount, 0))
+// 61494014
 
 /*
   08
@@ -100,6 +117,7 @@ const pets = [
   { name: 'Cristal', age: 3, gender: 'Female', type: 'Dog' },
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
+//console.log(pets.filter(e => e.type === 'Dog').map(e => e.age * 7))
 
 /*
   09
@@ -107,6 +125,8 @@ const pets = [
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
+const ul = document.querySelector('ul')
+ul.innerHTML =  topBrazilmovies.map(e => `<li>${e.title}</li>`).join('')
 
 /*
   10

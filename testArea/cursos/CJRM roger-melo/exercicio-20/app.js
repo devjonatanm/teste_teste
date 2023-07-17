@@ -1,39 +1,50 @@
 /* 
   01
 
-  - Insira apenas o css do bootstrap no index.html.
+  - Insira apenas o css do bootstrap no index.html. ✅
 */
 
 /* 
-  02
+  02 
 
   - Após um segundo e meio do carregamento da página, exiba no console a  
-    mensagem "Um segundo e meio se passaram desde que a página foi carregada".
+    mensagem "Um segundo e meio se passaram desde que a página foi carregada". ✅
 */
+
+setTimeout(function () {
+  console.log("Um segundo e meio se passaram desde que a página foi carregada")
+}, 0);
 
 
 
 /* 
   03
 
-  - Faça o contador do index.html funcionar;
-  - O clique no botão "Parar contador" deve fazer com que o contador exiba 0.
+  - Faça o contador do index.html funcionar; ✅
+  - O clique no botão "Parar contador" deve fazer com que o contador exiba 0. ✅
 */
-
-
+let count = 0
+document.querySelector('.button-init-counter').addEventListener('click', e => {
+  count++
+  document.querySelector('.counter-container').textContent = count
+})
+document.querySelector('.button-stop-counter').addEventListener('click', e => {
+  count = 0
+  document.querySelector('.counter-container').textContent = count
+})
 
 /* 
   04
 
   - A partir deste exercício, vamos voltar a trabalhar na sua versão do Quiz =D
-  - Adicione mais 2 alternativas em cada pergunta do quiz.
+  - Adicione mais 2 alternativas em cada pergunta do quiz. ✅
 */
 
 /* 
   05
 
   - Modifique a ordem das alternativas corretas. Ou seja, faça com que a  
-    alternativa correta das perguntas não seja apenas a alternativa "B".
+    alternativa correta das perguntas não seja apenas a alternativa "B". ✅
 */
 
 /* 
@@ -43,7 +54,7 @@
   
   Dicas: 
     - Primeiro, quebre o código da função de callback de envio do form em  
-      funções isoladas;
+      funções isoladas; ✅
     - Depois, cuide da legibilidade das funções.
 */
 
@@ -51,7 +62,7 @@
   07
 
   O exercício agora é considerarmos fazer dessa aplicação uma peça do seu 
-  portfólio.
+  portfólio. ✅
 
   Se você conseguiu executar o exercício da aula passada, especialmente sem ter  
   que rever partes da aula, ou seja, se você sente que desenvolveu a sua versão  

@@ -6,6 +6,7 @@
 */
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
+//console.log(randomNumbers.filter(e => e%2 === 1))
 
 /*
   02
@@ -14,6 +15,7 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+//console.log(crazyNumbers.filter(e => e < 501).length)
 
 /*
   03
@@ -23,6 +25,7 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+//console.log(numbers.map(e => e ** 2))
 
 /*
   04
@@ -34,7 +37,6 @@ const numbers = [5, 7, 3]
   Dica: para quebrar linha, você pode usar dentro da string o caractere 
   especial \n.
 */
-
 const cart = [
   { name: 'Dark Souls III', price: 95.03 },
   { name: 'Shadow of the Tomb Raider', price: 101.19 },
@@ -42,6 +44,7 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+//cart.forEach(e => console.log(`- ${e.name}`))
 
 /*
   - Nome 1
@@ -69,6 +72,7 @@ const tarantinoMovies = [
   { name: 'À Prova de Morte', release: 2007 },
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
+//console.log(tarantinoMovies.filter(e => e.release < 2000))
 
 /*
   06
@@ -86,6 +90,7 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+//tvShows.forEach(e => console.log(e.name))
 
 /*
   07

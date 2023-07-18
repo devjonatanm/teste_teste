@@ -6,6 +6,7 @@
 */
 
 const myString = '    JS      '
+//console.log(myString.trim())
 
 /*
   02
@@ -22,6 +23,7 @@ const people = [
   { firstName: 'Felipe', lastName: 'Tavares', score: 71 },
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
+//console.log(people.sort((a, b) => a.score - b.score))
 
 /*
   03
@@ -32,8 +34,8 @@ const people = [
       final que os exercícios pedem. Após resolver um exercício, remova o 
       debugger antes de partir para o próximo.
 */
-
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
+// console.log(animals.filter(e => e.length <= 3))
 
 /*
   04
@@ -41,7 +43,7 @@ const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
   - Baseado no array "animals", gere um novo array com a quantidade de letras do 
     nome de cada animal. Ex.: [6, 8, 2].
 */
-
+//console.log(animals.map(e => e.length))
 
 
 /*
@@ -59,8 +61,7 @@ const friends = [
   { id: 4, name: 'Nilson', nearMe: true },
   { id: 5, name: 'Solange', nearMe: false }
 ]
-
-
+//console.log(friends.filter(e => e.nearMe === true).map(e => e.name))
 
 /*
   06
@@ -70,6 +71,7 @@ const friends = [
 */
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
+//console.log(numbers.filter(e => e % 2 === 1).reduce((acc, act) => acc + act, 0))
 
 /*
   07
@@ -91,3 +93,4 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+// console.log(data.filter(e => e.country !== 'China').reduce((acc,act)=>acc+act.population,0))

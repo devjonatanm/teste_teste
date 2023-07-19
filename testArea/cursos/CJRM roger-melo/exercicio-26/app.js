@@ -5,6 +5,15 @@
     formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
   - Não utilize a date-fns.
 */
+const dataConvert = data => {
+  const dia = data.getDate()
+  const mes = data.getMonth() + 1
+  const ano = data.getFullYear()
+  return `${dia}/${mes}/${ano}`
+
+}
+const data = new Date()
+//console.log(dataConvert(data))
 
 /*
   02
@@ -13,6 +22,41 @@
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
+const dataFormat = data => {
+  const dia = data.getDate()
+  const arrayMes = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ]
+  const mes = data.getMonth()
+  const ano = data.getFullYear()
+  const arraySemana = [
+    'Domingo',
+    'Segunda-Feira',
+    'Terça-Feira',
+    'Quarta-Feira',
+    'Quinta-Feira',
+    'Sexta-Feira',
+    'Sábado'
+  ]
+  const semana = data.getDay()
+  const horas = data.getHours()
+  const minutos = data.getMinutes()
+
+  return `${horas}:${minutos} - ${arraySemana[semana]}, ${dia} de ${arrayMes[mes]} de ${ano}`
+}
+//console.log(dataFormat(data))
+
 
 /*
   03
@@ -22,7 +66,8 @@
   - Não modifique a declaração da const user.
 */
 
-const user = { id: 42, isVerified: true }
+const { id, isVerified } = { id: 42, isVerified: true }
+//console.log(id, isVerified)
 
 /*
   04
@@ -36,6 +81,8 @@ const user = { id: 42, isVerified: true }
 
 const robotA = { name: 'Bender' }
 const robotB = { name: 'HAL 9000' }
+const [nameA, nameB] = [robotA.name, robotB.name]
+//console.log(nameA, nameB)
 
 /*
   05
@@ -49,6 +96,13 @@ const robotB = { name: 'HAL 9000' }
 const a = 'a'
 const b = 'b'
 const c = 'c'
+
+const obj = {
+  a,
+  b,
+  c
+}
+//console.log(obj)
 
 /*
   06

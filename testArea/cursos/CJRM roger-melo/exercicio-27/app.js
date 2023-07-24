@@ -4,7 +4,7 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
-console.log('Linha 1')
+/* console.log('Linha 1') <<
 console.log('Linha 2')
 console.log('Linha 3')
 console.log('Linha 4')
@@ -14,7 +14,7 @@ console.log('Linha 4')
 console.log('Linha 5')
 console.log('Linha 6')
 console.log('Linha 7')
-console.log('Linha 8')
+console.log('Linha 8') */
 
 /*
   02
@@ -23,11 +23,14 @@ console.log('Linha 8')
     "logGreeting" ser exibida no console.
 */
 
-function logGreeting (name) {
+function logGreeting(name) {
   console.log(`olá, ${name}`)
 }
 
-// x(logGreeting)
+const exibaCall = (logGreeting) => {
+  return logGreeting('Jonatan')
+}
+// exibaCall(logGreeting)
 
 /*
   03
@@ -36,9 +39,10 @@ function logGreeting (name) {
 */
 
 const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+const filtrarNumbers = numbers.filter(num => num < 5)
+const lesserThanFive = filtrarNumbers
 
-console.log(lesserThanFive)
+// console.log(lesserThanFive)
 
 /*
   04
@@ -53,7 +57,7 @@ for (let i = 0; i < prices.length; i++) {
   totalPrice += prices[i]
 }
 
-console.log(`Preço total: ${totalPrice}`)
+// console.log(`Preço total: ${totalPrice}`) 
 
 /*
   05
@@ -64,16 +68,27 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
+//car = { color: 'azul' }
+car = { ...car, color: 'azul' }
+
+console.log(car)
+
+
 
 /*
   06
 
-  - Crie uma função que recebe 3 argumentos;
+  - Crie uma função que recebe 3 argumentos; ✅
   - Se um dos 3 argumentos não for passado na invocação, a string 'A função 
     deve ser invocada com 3 argumentos' deve ser retornada;
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
+const recebTres = (x,y,z) => {
+
+}
+
+
 
 /*
   07

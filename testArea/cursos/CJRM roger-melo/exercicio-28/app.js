@@ -15,6 +15,11 @@
     obter os dados do pokémon';
   - Teste também a verificação do item acima.
 */
+/* fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+    .then(response => {
+      response.json()
+      .then(data => console.log(data))
+    }) */
 
 /*
   02
@@ -30,6 +35,17 @@
     - Se você está andando (boolean iniciado em false);
     - Quantos metros você caminhou (number iniciado em 0).
 */
+const pessoa = {
+  nome: 'Jonatan',
+  sobrenome: 'Marques',
+  sexo: 'masculino',
+  idade: 28,
+  altura: 1.76,
+  peso: 89.9,
+  estaAndando: false,
+  metrosCaminhados: 0,
+  maisAno() { return ++this.idade }
+}
 
 /*
   03
@@ -39,6 +55,12 @@
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
+pessoa.maisAno()
+pessoa.maisAno()
+pessoa.maisAno()
+pessoa.maisAno()
+pessoa.maisAno()
+// console.log(pessoa)
 
 /*
   04
@@ -50,6 +72,19 @@
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+pessoa.andando = metros => {
+  if (pessoa.metrosCaminhados !== 0) {
+    pessoa.estaAndando = true
+  }
+  return pessoa.metrosCaminhados += metros
+}
+pessoa.andando(1)
+// pessoa.andando(2)
+// pessoa.andando(3)
+// pessoa.andando(7)
+
+// console.log(pessoa.metrosCaminhados)
+// console.log(pessoa.estaAndando)
 
 /*
   05
@@ -67,6 +102,13 @@
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
+pessoa.descricao = _ => {
+
+  return `Oi. Eu sou ${pessoa.sexo === 'masculino' ? 'o' : 'a'} ${pessoa.nome}, tenho ${pessoa.idade} ${pessoa.idade === 1 ? 'ano' : 'anos'}, ${pessoa.altura} metros de altura, 
+  peso ${pessoa.peso} quilos e, só hoje, eu já caminhei ${pessoa.metrosCaminhados} 
+  ${pessoa.metrosCaminhados === 1 ? 'metro' : 'metros'}.`
+}
+// console.log(pessoa.descricao())
 
 /*
   06
@@ -79,6 +121,20 @@
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
+const teste = item => {
+  return !!item
+}
+// console.log('falsos')
+// console.log(teste(null))
+// console.log(teste(undefined))
+// console.log(teste(0))
+// console.log(teste(''))
+// console.log(teste(NaN))
+// console.log('verdadeiros')
+// console.log(teste([]))
+// console.log(teste({}))
+// console.log(teste(' '))
+// console.log(teste(1))
 
 /*
   07
@@ -98,3 +154,31 @@
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
+const livro = nomeLivro => {
+  const obj = {
+    'Mindset: A Nova Psicologia do Sucesso': {
+      quantPaginas: 347,
+      autor: 'Carol Dweck',
+      editora: 'Objetiva'
+    },
+    'O Efeito Cumulativo': {
+      quantPaginas: 176,
+      autor: 'Darren Hardy',
+      editora: 'Alta Life'
+    },
+    'Especialista em pessoas': {
+      quantPaginas: 224 ,
+      autor: 'Tiago Brunet',
+      editora: 'Academia'
+    }
+  }
+
+  if(Object.keys(obj).includes(nomeLivro)){
+    return obj[nomeLivro]
+  }
+
+  return obj
+}
+
+// console.log(livro('O Efeito Cumulativo'))
+// console.log(livro())
